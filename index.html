@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donut SMP Shop</title>
+<style>
+  body { margin:0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f2f2f2; }
+  header { background:#ffcc00; padding:15px 20px; display:flex; align-items:center; justify-content:space-between; position:fixed; width:100%; top:0; z-index:1000; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+  header h1 { margin:0; font-size:1.5rem; }
+  .hamburger { font-size:28px; cursor:pointer; }
+
+  /* Side menu */
+  nav { display:none; flex-direction:column; background:#333; color:#fff; position:fixed; top:60px; left:0; width:220px; height:100%; padding-top:20px; }
+  nav a { color:#fff; padding:12px 20px; text-decoration:none; transition:0.2s; }
+  nav a:hover { background:#444; }
+
+  /* Main content */
+  main { padding:100px 20px 20px 20px; max-width:1000px; margin:auto; }
+
+  h2 { border-bottom:2px solid #ffcc00; padding-bottom:8px; margin-bottom:15px; }
+
+  /* Carousel */
+  .carousel { position:relative; width:100%; max-height:250px; overflow:hidden; border-radius:10px; margin-bottom:30px; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+  .carousel img { width:100%; display:none; cursor:pointer; transition:0.5s; border-radius:10px;}
+  .carousel img.active { display:block; }
+
+  /* Grid items */
+  .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:20px; }
+  .item { background:#fff; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); overflow:hidden; transition:transform 0.2s, box-shadow 0.2s; }
+  .item:hover { transform:translateY(-5px); box-shadow:0 5px 15px rgba(0,0,0,0.2); }
+  .item img { width:100%; height:150px; object-fit:cover; }
+  .item-content { padding:10px 15px; display:flex; flex-direction:column; justify-content:space-between; height:120px; }
+  .item-content h3 { margin:0; font-size:1.1rem; }
+  .item-content button { margin-top:10px; background:#ffcc00; border:none; padding:10px; border-radius:5px; font-weight:bold; cursor:pointer; transition:0.2s; }
+  .item-content button:hover { background:#e6b800; }
+
+  /* Contact form */
+  form { background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); margin-top:20px; }
+  form input, form textarea { width:100%; padding:10px; margin:10px 0; border:1px solid #ccc; border-radius:5px; }
+  form button { background:#ffcc00; border:none; padding:12px 20px; cursor:pointer; border-radius:5px; font-weight:bold; }
+  form button:hover { background:#e6b800; }
+
+  footer { text-align:center; padding:20px; margin-top:40px; font-size:14px; color:#555; }
+
+  @media(max-width:600px) { nav { width:180px; } .item-content { height:140px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <h1>Donut SMP Shop</h1>
+</header>
+
+<nav id="sideMenu">
+  <a href="#carousel">Featured</a>
+  <a href="#builds">Builds</a>
+  <a href="#gear">Gear</a>
+  <a href="#digging">Digging</a>
+  <a href="#contact">Contact Us</a>
+</nav>
+
+<main>
+  <!-- Carousel -->
+  <section id="carousel" class="carousel">
+    <img src="https://via.placeholder.com/1000x250?text=Featured+Starter+House" alt="Starter House" class="active" onclick="buy('starter-house')">
+    <img src="https://via.placeholder.com/1000x250?text=Featured+Diamond+Armor" alt="Diamond Armor" onclick="buy('diamond-armor')">
+    <img src="https://via.placeholder.com/1000x250?text=Featured+Mining+Kit" alt="Mining Kit" onclick="buy('mining-kit')">
+  </section>
+
+  <!-- Builds Section -->
+  <section id="builds">
+    <h2>Builds</h2>
+    <div class="grid">
+      <div class="item">
+        <img src="https://via.placeholder.com/300x150?text=Starter+House" alt="Starter House">
+        <div class="item-content">
+          <h3>Starter House</h3>
+          <button onclick="buy('starter-house')">Buy</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="https://via.placeholder.com/300x150?text=Farm+Plot" alt="Farm Plot">
+        <div class="item-content">
+          <h3>Farm Plot</h3>
+          <button onclick="buy('farm-plot')">Buy</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gear Section -->
+  <section id="gear">
+    <h2>Gear</h2>
+    <div class="grid">
+      <div class="item">
+        <img src="https://via.placeholder.com/300x150?text=Iron+Pickaxe" alt="Iron Pickaxe">
+        <div class="item-content">
+          <h3>Iron Pickaxe</h3>
+          <button onclick="buy('iron-pickaxe')">Buy</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="https://via.placeholder.com/300x150?text=Diamond+Armor" alt="Diamond Armor">
+        <div class="item-content">
+          <h3>Diamond Armor</h3>
+          <button onclick="buy('diamond-armor')">Buy</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Digging Section -->
+  <section id="digging">
+    <h2>Digging</h2>
+    <div class="grid">
+      <div class="item">
+        <img src="https://via.placeholder.com/300x150?text=Shovel+Set" alt="Shovel Set">
+        <div class="item-content">
+          <h3>Shovel Set</h3>
+          <button onclick="buy('shovel-set')">Buy</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="https://via.placeholder.com/300x150?text=Mining+Kit" alt="Mining Kit">
+        <div class="item-content">
+          <h3>Mining Kit</h3>
+          <button onclick="buy('mining-kit')">Buy</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form onsubmit="submitForm(event)">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  &copy; 2026 Donut SMP Shop
+</footer>
+
+<script>
+  // Hamburger
+  function toggleMenu() {
+    const menu = document.getElementById('sideMenu');
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+  }
+
+  // Buy items via Cash App
+  function buy(product) {
+    let url = '';
+    switch(product) {
+      case 'starter-house': url='https://cash.app/$DonutSMP/5'; break;
+      case 'farm-plot': url='https://cash.app/$DonutSMP/10'; break;
+      case 'iron-pickaxe': url='https://cash.app/$DonutSMP/2'; break;
+      case 'diamond-armor': url='https://cash.app/$DonutSMP/15'; break;
+      case 'shovel-set': url='https://cash.app/$DonutSMP/3'; break;
+      case 'mining-kit': url='https://cash.app/$DonutSMP/7'; break;
+    }
+    window.open(url,'_blank');
+  }
+
+  // Contact form
+  function submitForm(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const msg = document.getElementById('message').value;
+    const emailLink = `mailto:youremail@example.com?subject=Contact%20from%20Website&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0AMessage:%20${encodeURIComponent(msg)}`;
+    window.open(emailLink,'_blank');
+    alert("Your message link is ready!");
+    document.querySelector('form').reset();
+  }
+
+  // Carousel rotation
+  const carouselImgs = document.querySelectorAll('.carousel img');
+  let currentIndex = 0;
+  setInterval(() => {
+    carouselImgs[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % carouselImgs.length;
+    carouselImgs[currentIndex].classList.add('active');
+  }, 4000); // rotate every 4 seconds
+</script>
+
+</body>
+</html>
