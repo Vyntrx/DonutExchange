@@ -61,7 +61,7 @@
     }
     .buy-btn {
       display: inline-block;
-      margin-top: 15px;
+      margin-top: 10px;
       padding: 10px 16px;
       background: #ff5722;
       color: #ffffff;
@@ -72,6 +72,32 @@
     }
     .buy-btn:hover {
       background: #ff784e;
+    }
+    .order-form {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+    .order-form input,
+    .order-form textarea {
+      margin-bottom: 8px;
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      font-size: 0.9rem;
+    }
+    .order-form button {
+      background: #ff9800;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      padding: 8px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .order-form button:hover {
+      background: #ffb74d;
     }
     footer {
       margin-top: 60px;
@@ -91,33 +117,70 @@
 
   <div class="container">
     <div class="grid">
+      <!-- Netherite Set -->
       <div class="card">
         <h2>Netherite Set</h2>
         <div class="price">$5 or In-Game Trade</div>
         <p>Full Netherite armor set. Enchanted options available upon request.</p>
         <a class="buy-btn" href="https://cash.app/$AnsonJohnson2/5" target="_blank">Buy / Pay with Cash App</a>
+
+        <form class="order-form" action="https://formspree.io/f/XXXXYYYY" method="POST">
+          <input type="hidden" name="item" value="Netherite Set">
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="text" name="ign" placeholder="Your In-Game Name" required>
+          <textarea name="details" placeholder="Additional Notes / Custom Requests"></textarea>
+          <button type="submit">Send Order Details</button>
+        </form>
       </div>
 
+      <!-- Shulker Boxes -->
       <div class="card">
         <h2>Shulker Boxes</h2>
         <div class="price">$1 each</div>
         <p>High-quality shulker boxes for storage, raids, and PvP loadouts.</p>
         <a class="buy-btn" href="https://cash.app/$AnsonJohnson2/1" target="_blank">Buy / Pay with Cash App</a>
+
+        <form class="order-form" action="https://formspree.io/f/XXXXYYYY" method="POST">
+          <input type="hidden" name="item" value="Shulker Boxes">
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="text" name="ign" placeholder="Your In-Game Name" required>
+          <textarea name="details" placeholder="Additional Notes / Custom Requests"></textarea>
+          <button type="submit">Send Order Details</button>
+        </form>
       </div>
 
+      <!-- Totems of Undying -->
       <div class="card">
         <h2>Totems of Undying</h2>
         <div class="price">$0.50 each</div>
         <p>Reliable totems for PvP, raids, and survival. Bulk discounts available.</p>
         <a class="buy-btn" href="https://cash.app/$AnsonJohnson2/0.50" target="_blank">Buy / Pay with Cash App</a>
+
+        <form class="order-form" action="https://formspree.io/f/XXXXYYYY" method="POST">
+          <input type="hidden" name="item" value="Totems of Undying">
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="text" name="ign" placeholder="Your In-Game Name" required>
+          <textarea name="details" placeholder="Additional Notes / Custom Requests"></textarea>
+          <button type="submit">Send Order Details</button>
+        </form>
       </div>
 
+      <!-- Custom Orders -->
       <div class="card">
         <h2>Custom Orders</h2>
         <div class="price">Negotiable</div>
         <p>Need something specific? Farms, kits, weapons, or rare items.</p>
         <a class="buy-btn" href="https://cash.app/$AnsonJohnson2" target="_blank">Contact / Pay with Cash App</a>
+
+        <form class="order-form" action="https://formspree.io/f/XXXXYYYY" method="POST">
+          <input type="hidden" name="item" value="Custom Order">
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="text" name="ign" placeholder="Your In-Game Name" required>
+          <textarea name="details" placeholder="Order Details / Custom Requests"></textarea>
+          <button type="submit">Send Order Details</button>
+        </form>
       </div>
+
     </div>
   </div>
 
