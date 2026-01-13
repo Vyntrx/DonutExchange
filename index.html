@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DonutExchange</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0e0e0e;
+      color: #ffffff;
+    }
+    header {
+      background: linear-gradient(90deg, #ff9800, #ff5722);
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin: 5px 0 0;
+      opacity: 0.9;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+    }
+    .card h2 {
+      margin-top: 0;
+      color: #ff9800;
+    }
+    .price {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+    .buy-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 16px;
+      background: #ff5722;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+    .buy-btn:hover {
+      background: #ff784e;
+    }
+    footer {
+      margin-top: 60px;
+      padding: 20px;
+      text-align: center;
+      background: #111;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Donut SMP Shop</h1>
+    <p>Trusted in-game trading • Fast delivery • No scams</p>
+  </header>
+
+  <div class="container">
+    <div class="grid">
+      <div class="card">
+        <h2>Netherite Set</h2>
+        <div class="price">$5 or In-Game Trade</div>
+        <p>Full Netherite armor set. Enchanted options available upon request.</p>
+        <a class="buy-btn" href="#">Buy / Order</a>
+      </div>
+
+      <div class="card">
+        <h2>Shulker Boxes</h2>
+        <div class="price">$1 each</div>
+        <p>High-quality shulker boxes for storage, raids, and PvP loadouts.</p>
+        <a class="buy-btn" href="#">Buy / Order</a>
+      </div>
+
+      <div class="card">
+        <h2>Totems of Undying</h2>
+        <div class="price">$0.50 each</div>
+        <p>Reliable totems for PvP, raids, and survival. Bulk discounts available.</p>
+        <a class="buy-btn" href="#">Buy / Order</a>
+      </div>
+
+      <div class="card">
+        <h2>Custom Orders</h2>
+        <div class="price">Negotiable</div>
+        <p>Need something specific? Farms, kits, weapons, or rare items.</p>
+        <a class="buy-btn" href="#">Contact Seller</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Not affiliated with Mojang or Donut SMP staff. In-game items only.</p>
+  </footer>
+</body>
+</html>
